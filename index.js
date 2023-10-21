@@ -1,5 +1,29 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+let array =[1,3,4,6, 7]
+let target = 14
+// function hasTargetSum(array, target) {
+//   // Write your algorithm here
+//   for(let i=0; i < array.length; i++){
+//     for(let j=0; j < array.length; j++){
+//       if(array[i] + array[j] === target ){
+//         console.log([array[i], array[j]])
+//         return true
+//       }
+//     }
+//   }
+//   return false
+// }
+// console.log(hasTargetSum(array,target))
+function hasTargetSum(array, target){
+  let set = new Set();
+  for (let i = 0; i< array.length; i++){
+    let compliment = target - array[i]
+    if(set.has(compliment)){
+      return true
+    } else  {
+      set.add(array[i])
+    }
+  }
+  return false
 }
 
 /* 
